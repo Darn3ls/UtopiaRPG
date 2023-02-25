@@ -11,6 +11,8 @@ namespace Utopia
 
         [SerializeField]
         Vector2 movementInput;
+        public float verticalInput;
+        public float horizontalInput;
 
         private void OnEnable()
         {
@@ -27,6 +29,20 @@ namespace Utopia
         {
             playerControls.Disable();
         }
+    
+        private void HandleMovementInput()
+        {
+            verticalInput = movementInput.y;
+            horizontalInput = movementInput.x;
+        }
+
+        public void HandleAllInputs()
+        {
+            HandleMovementInput();
+            //HandleJumpingInput();
+            //HandleActionInput();
+        }
+    
     }
 }
 
