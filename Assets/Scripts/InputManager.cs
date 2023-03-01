@@ -9,10 +9,18 @@ namespace Utopia
         //new Input System reference script
         PlayerControls playerControls;
 
+        AnimatorManager animatorManager;
+
         [SerializeField]
         Vector2 movementInput;
+        private float moveAmount;
         public float verticalInput;
         public float horizontalInput;
+
+        private void Awake() 
+        {
+            animatorManager = GetComponent<AnimatorManager>();
+        }
 
         private void OnEnable()
         {
@@ -34,6 +42,8 @@ namespace Utopia
         {
             verticalInput = movementInput.y;
             horizontalInput = movementInput.x;
+            moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
+            animatorManager.UpdateAnimatorValues(0, moveAmount);
         }
 
         public void HandleAllInputs()
