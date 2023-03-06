@@ -29,7 +29,7 @@ namespace Utopia
 
         private void LateUpdate() 
         {
-            cameraManager.FollowTarget();
+            cameraManager.HandleAllCameraMovement();
         }
     }
 }

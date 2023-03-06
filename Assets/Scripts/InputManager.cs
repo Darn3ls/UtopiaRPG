@@ -13,9 +13,14 @@ namespace Utopia
 
         [SerializeField]
         Vector2 movementInput;
+        [SerializeField]
+        Vector2 cameraInput;
         private float moveAmount;
         public float verticalInput;
         public float horizontalInput;
+
+        public float cameraHorizontalInput;
+        public float cameraVerticalInput;
 
         private void Awake() 
         {
@@ -29,6 +34,8 @@ namespace Utopia
                 playerControls = new PlayerControls();
                 //when WASD or Joystick left call Movement Vector2
                 playerControls.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
+                //when mouse or joystick right
+                playerControls.PlayerMovement.Camera.performed += inputActions => cameraInput = inputActions.ReadValue<Vector2>();
             }
             playerControls.Enable();
         }
@@ -42,6 +49,10 @@ namespace Utopia
         {
             verticalInput = movementInput.y;
             horizontalInput = movementInput.x;
+
+            cameraHorizontalInput = cameraInput.x;
+            cameraVerticalInput = cameraInput.y;
+
             moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
             animatorManager.UpdateAnimatorValues(0, moveAmount);
         }
