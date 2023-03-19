@@ -11,8 +11,8 @@ namespace Utopia
         Transform cameraObject;
         Vector3 moveDirection; //handle the movement direction of the player
         Vector3 targetDirection; //handle the rotation of the player, facing always the movement direction (target)
-        public float movementSpeed = 7f;
-        public float rotationSpeed = 15f;
+        float movementSpeed = 7f;
+        float rotationSpeed = 15f;
         Rigidbody playerRigidbody;
         
 
