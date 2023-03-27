@@ -155,6 +155,7 @@ namespace StarterAssets
 
         private void Update()
         {
+            if(!IsOwner) return;
             _hasAnimator = TryGetComponent(out _animator);
 
             JumpAndGravity();
