@@ -5705,6 +5705,7 @@ GameObject:
   - component: {fileID: 8723310647619345347}
   - component: {fileID: 5018321995372748330}
   - component: {fileID: 761505256344590282}
+  - component: {fileID: 517176887398326354}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -5846,6 +5847,7 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   jump: 0
   sprint: 0
+  attack: 0
   analogMovement: 0
   cursorLocked: 0
   cursorInputForLook: 1
@@ -6029,6 +6031,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2070925442561853258}
+--- !u!114 &517176887398326354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4162898591214135911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a83bc43441f7d84ba19ca2cd7d1f2a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7236838536258218663}
 --- !u!1 &4200996035640843835
 GameObject:
   m_ObjectHideFlags: 0
